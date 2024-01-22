@@ -10,7 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'sku',
         'year',
-        'size'
+        'size',
         'price',
         'image',
     )
@@ -23,6 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
