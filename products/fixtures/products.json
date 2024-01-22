@@ -1,0 +1,254 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "p001",
+            "name": "Gold full suspension mountain bike",
+            "description": "A gold mountain bike with full suspension.",
+            "price": 349.99,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-full-one.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "p002",
+            "name": "Green front suspension mountain bike",
+            "description": "A green mountain bike with front suspension.",
+            "price": 300.00,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-front-one.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "p003",
+            "name": "Grey front suspension mountain bike",
+            "description": "A grey mountain bike with front suspension.",
+            "price": 300.00,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-front-two.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "p004",
+            "name": "Limegreen front suspension mountain bike",
+            "description": "A limegreen mountain bike with front suspension.",
+            "price": 300.00,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-front-three.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "p005",
+            "name": "White front suspension mountain bike",
+            "description": "A white mountain bike with front suspension.",
+            "price": 300.00,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-front-four.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "p006",
+            "name": "Electric blue front suspension mountain bike",
+            "description": "A electric blue mountain bike with front suspension.",
+            "price": 300.00,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-front-five.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "p007",
+            "name": "Red full suspension mountain bike",
+            "description": "A red mountain bike with full suspension.",
+            "price": 349.99,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-full-two.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "p008",
+            "name": "A white red and black full suspension mountain bike",
+            "description": "A white red and black mountain bike with full suspension complete with mud guards.",
+            "price": 369.99,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-full-three.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "p009",
+            "name": "A red and silver full suspension mountain bike",
+            "description": "A red and silver mountain bike with full suspension.",
+            "price": 349.99,
+            "year": 2022,
+            "size": "M",
+            "category": 1,
+            "image": "mountain-full-four.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "p010",
+            "name": "A black red and white road bike",
+            "description": "A black red and white road bike with slimline wheels.",
+            "price": 400.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "road-bike-one.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "p011",
+            "name": "BMW charcoal road bike",
+            "description": "A limited edition BMW charcoal road bike complete with slimline wheels and bottle holder.",
+            "price": 650.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "road-bike-two.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "p012",
+            "name": "Red road bike",
+            "description": "A red road bike complete with slimline wheels and racing handle bars and breaks.",
+            "price": 500.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "road-bike-three.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "p013",
+            "name": "Blue road bike",
+            "description": "A blue road bike complete with slimline wheels and racing handle bars and breaks.",
+            "price": 500.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "road-bike-four.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "p014",
+            "name": "Lightweight bike",
+            "description": "A lightweight design bike partly made from carbon-fibre complete with front suspension finished in gun metal gray.",
+            "price": 450.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "lightweight-carbon-one.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "p015",
+            "name": "Carbon-fibre bike",
+            "description": "A complete carbon-fibre frame bike with front suspension limted edition weighing under 2.5kg finished with a two tone paint",
+            "price": 1500.00,
+            "year": 2022,
+            "size": "L",
+            "category": 2,
+            "image": "lightweight-carbon-two.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "p016",
+            "name": "Standard comfort bike",
+            "description": "A standard comfort bike perfect for those smooth journeys along the cycle path",
+            "price": 200.00,
+            "year": 2022,
+            "size": "M",
+            "category": 3,
+            "image": "standard.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "p017",
+            "name": "Standard comfort carrier bike",
+            "description": "A standard comfort bike complete with carrier attachment perfect for picnic baskets and small bags",
+            "price": 220.00,
+            "year": 2022,
+            "size": "M",
+            "category": 3,
+            "image": "standard-carrier.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "p018",
+            "name": "Standard fatbike",
+            "description": "A classic shaped frame bike complete with fatbike wheels, these will allow you to have a smooth ride across that golden sandy beach",
+            "price": 700.00,
+            "year": 2022,
+            "size": "M",
+            "category": 3,
+            "image": "standard-fatbike.jpg"
+        }
+    }
+]
