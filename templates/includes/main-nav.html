@@ -19,9 +19,9 @@
                 Mountain
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="mountain-link">
-                <a href="" class="dropdown-item">Front Suspension</a>
-                <a href="" class="dropdown-item">Full Suspension</a>
-                <a href="" class="dropdown-item">All Mountain</a>
+                <a href="{% url 'products' %}?category=front_suspension" class="dropdown-item">Front Suspension</a>
+                <a href="{% url 'products' %}?category=full_suspension" class="dropdown-item">Full Suspension</a>
+                <a href="{% url 'products' %}?category=front_suspension,full_suspension" class="dropdown-item">All Mountain</a>
             </div>
         </li>
 

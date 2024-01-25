@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category, SubCategory
 
 
 def all_products(request):
@@ -9,21 +9,46 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
+    categories = None
+    subcategories = None
 
-    # Handles search query
     if request.GET:
+        # Handles the category filtering
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        # Handles the subcategory filtering
+        if 'subcategory' in request.GET:
+            subcategories = request.GET['subcategory'].split(',')
+            paintings = paintings.filter(subcategory__name__in=subcategories)
+            subcategories = SubCategory.objects.filter(name__in=subcategories)
+
+        # Handles search query
         if 'q' in request.GET:
             Query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            Queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query) | 
+                Q(description__icontains=query) |
+                Q(category__name__icontains=query) |
+                Q(subcategory__name__icontains=query)
+                )
+
             products = products.filter(queries)
+
+    subcategories = SubCategory.objects.all()
 
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
+        'current_subcategories': subcategories,
+        'subcategories': subcategories,
     }
 
     return render(request, 'products/products.html', context)
