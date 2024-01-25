@@ -11,6 +11,7 @@ def all_products(request):
     query = None
     categories = None
     subcategories = None
+    paintings = None
 
     if request.GET:
         # Handles the category filtering
@@ -22,7 +23,7 @@ def all_products(request):
         # Handles the subcategory filtering
         if 'subcategory' in request.GET:
             subcategories = request.GET['subcategory'].split(',')
-            paintings = paintings.filter(subcategory__name__in=subcategories)
+            products = products.filter(subcategory__name__in=subcategories)
             subcategories = SubCategory.objects.filter(name__in=subcategories)
 
         # Handles search query

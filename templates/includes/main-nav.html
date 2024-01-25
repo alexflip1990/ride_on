@@ -19,9 +19,9 @@
                 Mountain
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="mountain-link">
-                <a href="{% url 'products' %}?category=front_suspension" class="dropdown-item">Front Suspension</a>
-                <a href="{% url 'products' %}?category=full_suspension" class="dropdown-item">Full Suspension</a>
-                <a href="{% url 'products' %}?category=front_suspension,full_suspension" class="dropdown-item">All Mountain</a>
+                <a href="{% url 'products' %}?subcategory=front_suspension" class="dropdown-item">Front Suspension</a>
+                <a href="{% url 'products' %}?subcategory=full_suspension" class="dropdown-item">Full Suspension</a>
+                <a href="{% url 'products' %}?subcategory=front_suspension,full_suspension" class="dropdown-item">All Mountain</a>
             </div>
         </li>
 
@@ -30,9 +30,9 @@
                 Road
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="road-link">
-                <a href="" class="dropdown-item">Road</a>
-                <a href="" class="dropdown-item">Lightweight &amp; Carbon-Fiber</a>
-                <a href="" class="dropdown-item">All Road</a>
+                <a href="{% url 'products' %}?subcategory=road" class="dropdown-item">Road</a>
+                <a href="{% url 'products' %}?subcategory=lightweight_and_carbon-fiber" class="dropdown-item">Lightweight &amp; Carbon-Fiber</a>
+                <a href="{% url 'products' %}?subcategory=road,lightweight_and_carbon-fiber" class="dropdown-item">All Road</a>
             </div>
         </li>
 
@@ -41,9 +41,9 @@
                 Comfort
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="comfort-link">
-                <a href="" class="dropdown-item">Standard</a>
-                <a href="" class="dropdown-item">Standard &amp; Carrier</a>
-                <a href="" class="dropdown-item">All Comfort</a>
+                <a href="{% url 'products' %}?subcategory=standard" class="dropdown-item">Standard</a>
+                <a href="{% url 'products' %}?subcategory=standard_and_carrier" class="dropdown-item">Standard &amp; Carrier</a>
+                <a href="{% url 'products' %}?subcategory=standard,standard_and_carrier" class="dropdown-item">All Comfort</a>
             </div>
         </li>
     </ul>
