@@ -36,15 +36,15 @@ def adjust_basket(request, item_id):
     """ Adjust the quantity of the specified product to the specified amount """
 
     quantity = int(request.POST.get('quantity'))
-    #products = get_object_or_404(Product, pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     basket = request.session.get('basket', {})
 
     if quantity > 0:
         basket[item_id] = quantity
-        #messages.success(request, f'Updated {product.name} quantity to {basket[item_id]}')
+        messages.success(request, f'Updated {product.name} quantity to {basket[item_id]}')
     else:
         basket.pop(item_id)
-        #messages.success(request, f'Removed {product.name} from your basket')
+        messages.success(request, f'Removed {product.name} from your basket')
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
@@ -52,11 +52,16 @@ def adjust_basket(request, item_id):
 
 def remove_from_basket(request, item_id):
     """ Remove the item from the shopping basket """
+    
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        basket = request.session.get('basket', {})
+        basket.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your basket')
 
-    #products = get_object_or_404(Product, pk=item_id)
-    basket = request.session.get('basket', {})
-    basket.pop(item_id, None)
-    #messages.success(request, f'Removed {product.name} from your basket')
-
-    request.session['basket'] = basket
-    return redirect(reverse('view_basket'))
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+    
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
