@@ -6,7 +6,7 @@ class CustomerContactForm(forms.ModelForm):
 
     class Meta:
         model = ContactForm
-        fields = ('contact_name', 'contact_email', 'contact_message',
+        fields = ('subject', 'contact_name', 'contact_email', 'contact_message',
                   'contact_phone_number')
 
     def __init__(self, *args, **kwargs):
@@ -16,6 +16,7 @@ class CustomerContactForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'subject': 'Subject',
             'contact_name': 'Name',
             'contact_email': 'Email Address',
             'contact_message': 'Your Message',
