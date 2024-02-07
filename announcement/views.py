@@ -10,16 +10,16 @@ from .models import AnnouncementPost
 def announcement_list(request):
     """ A view to ensure only authenticated users can access the list of announcements"""
 
-    announcements = Announcement.objects.all()
-    return render(request, 'announcement_list.html', {'announcements': announcements})
+    announcements = AnnouncementPost.objects.all()
+    return render(request, 'announcement/announcement_list.html', {'announcements': announcements})
 
 
 @login_required
 def announcement_detail(request, pk):
     """ A view to ensure only authenticated users can access the details of announcements"""
 
-    announcement = get_object_or_404(Post, pk=pk)
-    return render(request, 'announcement_detail.html', {'announcement': announcement})
+    announcement = get_object_or_404(AnnouncementPost, pk=pk)
+    return render(request, 'announcement/announcement_detail.html', {'announcement': announcement})
 
 
 @login_required
@@ -67,8 +67,8 @@ def announcement_delete(request, pk):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only staff members can do that.')
         return redirect(reverse('home'))
-        
+
     if request.method == 'POST':
         announcement.delete()
         return redirect('announcement_list')
-    return render(request, 'announcement_confirm_delete.html', {'announcement': announcement})
+    return render(request, 'announcement_delete.html', {'announcement': announcement})

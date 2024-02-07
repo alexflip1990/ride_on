@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+
+        <!-- Delete confirmation main header -->
+        <div class="col-8 offset-2">
+            <hr>
+            <h2 class="text-center">Confirm Delete</h2>
+            <hr>
+
+            <!-- Delete confirmation message -->
+            <p>Are you sure you want to delete the announcement "{{ announcement.title }}"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{% url 'announcement_list' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

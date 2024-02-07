@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+
+        <!-- Announcement form main header -->
+        <div class="col-8 offset-2">
+            <hr>
+            <h2 class="text-center">{% if form.instance.pk %}Edit Announcement{% else %}Create Announcement{% endif %}
+            </h2>
+            <hr>
+
+            <!-- Announcement form -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
