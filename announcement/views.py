@@ -44,13 +44,13 @@ def announcement_create(request):
 @login_required
 def announcement_edit(request, pk):
     """ Edit an announcement on the page """
-    announcement = get_object_or_404(Post, pk=pk)
+    announcement = get_object_or_404(AnnouncementPost, pk=pk)
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only staff members can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = AnnouncementForm(request.POST, instance=post)
+        form = AnnouncementForm(request.POST, instance=announcement)
         if form.is_valid():
             announcement = form.save(commit=False)
             announcement.save()
@@ -63,7 +63,7 @@ def announcement_edit(request, pk):
 @login_required
 def announcement_delete(request, pk):
     """ Delete an announcement on the page """
-    announcement = get_object_or_404(Post, pk=pk)
+    announcement = get_object_or_404(AnnouncementPost, pk=pk)
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only staff members can do that.')
         return redirect(reverse('home'))
