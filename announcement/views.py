@@ -39,3 +39,36 @@ def announcement_create(request):
     else:
         form = AnnouncementForm()
     return render(request, 'announcement_form.html', {'form': form})
+
+
+@login_required
+def announcement_edit(request, pk):
+    """ Edit an announcement on the page """
+    announcement = get_object_or_404(Post, pk=pk)
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only staff members can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = AnnouncementForm(request.POST, instance=post)
+        if form.is_valid():
+            announcement = form.save(commit=False)
+            announcement.save()
+            return redirect('announcement_detail', pk=announcement.pk)
+    else:
+        form = AnnouncementForm(instance=post)
+    return render(request, 'announcement_form.html', {'form': form})
+
+
+@login_required
+def announcement_delete(request, pk):
+    """ Delete an announcement on the page """
+    announcement = get_object_or_404(Post, pk=pk)
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only staff members can do that.')
+        return redirect(reverse('home'))
+        
+    if request.method == 'POST':
+        announcement.delete()
+        return redirect('announcement_list')
+    return render(request, 'announcement_confirm_delete.html', {'announcement': announcement})
