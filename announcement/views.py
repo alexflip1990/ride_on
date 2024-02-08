@@ -36,6 +36,7 @@ def announcement_create(request):
             announcement = form.save(commit=False)
             announcement.author = request.user
             announcement.save()
+            messages.success(request, 'Announcement has been added!')
             return redirect(reverse('announcement_detail', args=[announcement.pk]))
     else:
         form = AnnouncementForm()
@@ -60,6 +61,7 @@ def announcement_edit(request, pk):
         if form.is_valid():
             announcement = form.save(commit=False)
             announcement.save()
+            messages.success(request, 'Announcement has been edited!')
             return redirect(reverse('announcement_detail', args=[announcement.pk]))
     else:
         form = AnnouncementForm(instance=announcement)
@@ -81,6 +83,7 @@ def announcement_delete(request, pk):
 
     if request.method == 'POST':
         announcement.delete()
+        messages.success(request, 'Announcement has been deleted!')
         return HttpResponseRedirect(reverse('announcement_list'))
     else:
         # Handle GET request, render the delete confirmation page

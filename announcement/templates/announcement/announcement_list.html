@@ -30,9 +30,7 @@
                     <p>Created On: {{ announcement.created_on }}</p>
                     
                     <!-- Edit button for superusers -->
-                    {% if request.user.is_superuser %}
                     <a href="{% url 'announcement_edit' pk=announcement.pk %}" class="btn btn-secondary">Edit</a>
-                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
