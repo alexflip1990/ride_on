@@ -26,9 +26,6 @@ def announcement_detail(request, pk):
 @login_required
 def announcement_create(request):
     """ Add an announcement to the page """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry only staff members can do that.')
-        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = AnnouncementForm(request.POST)
@@ -77,9 +74,6 @@ def announcement_edit(request, pk):
 def announcement_delete(request, pk):
     """ Delete an announcement on the page """
     announcement = get_object_or_404(AnnouncementPost, pk=pk)
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry only staff members can do that.')
-        return redirect(reverse('home'))
 
     if request.method == 'POST':
         announcement.delete()
