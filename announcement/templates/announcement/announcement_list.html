@@ -26,11 +26,31 @@
                 <li class="list-group-item">
                     <h3>{{ announcement.title }}</h3>
                     <p>Author: {{ announcement.author.username }}</p>
+                    <p>Content: {{ announcement.content }}</p>
                     <p>Created On: {{ announcement.created_on }}</p>
-                    <!-- Add any other fields you want to display -->
+                    
+                    <!-- Edit button for superusers -->
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'announcement_edit' pk=announcement.pk %}" class="btn btn-secondary">Edit</a>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
+            <!-- Create announcement button for superusers -->
+            {% if request.user.is_superuser %}
+            <div class="mt-3">
+                <a href="{% url 'announcement_create' %}" class="btn btn-success">Add New Announcement</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Back to homepage button -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col text-center">
+            <a href="{% url 'home' %}" class="btn btn-dark">Back to Homepage</a>
         </div>
     </div>
 </div>

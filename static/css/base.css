@@ -264,6 +264,18 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* Announcement Form and contact form */
+.list-group {
+    border: 2px solid #000;
+    
+}
+
+/* Delete form for superusers */
+.delete-form-button {
+    margin-left: 10px;
+    
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {

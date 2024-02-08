@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import AnnouncementForm
@@ -35,10 +36,15 @@ def announcement_create(request):
             announcement = form.save(commit=False)
             announcement.author = request.user
             announcement.save()
-            return redirect('announcement_detail', pk=announcement.pk)
+            return redirect(reverse('announcement_detail', args=[announcement.pk]))
     else:
         form = AnnouncementForm()
-    return render(request, 'announcement_form.html', {'form': form})
+
+    template = 'announcement/announcement_form.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
 
 
 @login_required
@@ -54,10 +60,15 @@ def announcement_edit(request, pk):
         if form.is_valid():
             announcement = form.save(commit=False)
             announcement.save()
-            return redirect('announcement_detail', pk=announcement.pk)
+            return redirect(reverse('announcement_detail', args=[announcement.pk]))
     else:
-        form = AnnouncementForm(instance=post)
-    return render(request, 'announcement_form.html', {'form': form})
+        form = AnnouncementForm(instance=announcement)
+
+    template = 'announcement/announcement_form.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
 
 
 @login_required
@@ -70,5 +81,7 @@ def announcement_delete(request, pk):
 
     if request.method == 'POST':
         announcement.delete()
-        return redirect('announcement_list')
-    return render(request, 'announcement_delete.html', {'announcement': announcement})
+        return HttpResponseRedirect(reverse('announcement_list'))
+    else:
+        # Handle GET request, render the delete confirmation page
+        return render(request, 'announcement/announcement_delete.html', {'announcement': announcement})

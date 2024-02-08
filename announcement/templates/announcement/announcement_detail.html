@@ -25,6 +25,21 @@
             <p>Created On: {{ announcement.created_on }}</p>
             <p>Updated On: {{ announcement.updated_on }}</p>
             <p>{{ announcement.content }}</p>
+
+            <!-- Buttons for editing and deleting -->
+            {% if request.user.is_superuser %}
+            <div class="btn-group" role="group">
+                <a href="{% url 'announcement_edit' pk=announcement.pk %}" class="btn btn-secondary">Edit</a>
+                <form method="post" action="{% url 'announcement_delete' pk=announcement.pk %}" class="delete-form-button">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this announcement?');">Delete</button>
+                </form>
+            </div>
+            {% endif %}
+            {% if request.user.is_superuser %}
+            <a href="{% url 'announcement_list' %}" class="btn btn-primary">Announcements List</a>
+            {% endif %}
         </div>
     </div>
 </div>
