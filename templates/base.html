@@ -143,9 +143,28 @@
     {% block page_header %}
     {% endblock %}
 
-    <!--Main page content-->
+    
     {% block content %}
     {% endblock %}
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container footer-container">
+            <!--Subscribe section-->
+            <div class="col-sm-3 pb-5">
+                <h4 class="col-pb-3">Subscribe to our Newsletter</h4>
+                <form method="POST" action="{% url 'subscribe' %}" id="subscribe-form" class="text-muted form mb-5"
+                    enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ subscribe_form | crispy }}
+                    <div class="mt-3">
+                        <button class="btn btn-black rounded-0" type="submit">Subscribe!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
