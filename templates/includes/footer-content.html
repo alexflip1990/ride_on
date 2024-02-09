@@ -1,0 +1,77 @@
+<div class="">
+
+    <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4 text-white">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="col-pb-3">Subscribe to our Newsletter</h3>
+                    <form method="POST" action="{% url 'subscribe' %}" id="subscribe-form" class="text-muted form mb-5"
+                        enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ subscribe_form.email }}
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary rounded-0" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h3 class="col-pb-3">About</h3>
+                <p><a href=""><i class="fa-solid fa-shield"></i> Privacy Policy</a></p>
+                <p><a href=""><i class="fa-solid fa-file"></i> Terms & Conditions</a></p>
+                <p><a href=""><i class="fa-solid fa-truck"></i> Delivery Policy</a></p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h3 class="col-pb-3">Contact</h3>
+                <a href="{% url 'contact' %}">Contact Us Form</a>
+                <h5 class="col-pb-3">Follow Us On</h5>
+                <a href="https://www.facebook.com/profile.php?id=100092700921305" class="social-icon" target="_blank"
+                    rel="noopener nofollow" aria-label="Link to Facebook">
+                    <i class="fa-brands fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener nofollow"
+                    aria-label="Link to Instagram">
+                    <i class="fa-brands fa-instagram-square fa-2x"></i>
+                </a>
+                <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener nofollow"
+                    aria-label="Link to Twitter">
+                    <i class="fa-brands fa-twitter-square fa-2x"></i>
+                </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Ride-On
+                    </h6>
+                    <p>
+                        <i class="fas fa-home me-3"></i> Unit 2 Ffach Industrial Way, Llansamlet, Wales
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@ride-on.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone me-3"></i> 01793 414652
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 border-top border-white">
+            <div class="text-center p-4">
+                Project &copy; Alex Flipping 2024 <a href="https://github.com/alexflip1990" class="me-4 text-reset"
+                    target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-square-github"></i>
+                </a>
+                <p>Portfolio Project, this website is for educational purposes only</p>
+                <p>All orders received for this website will not be fullfilled.</p>
+            </div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</div>

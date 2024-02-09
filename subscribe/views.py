@@ -1,4 +1,5 @@
 from django.http import HttpResponseRedirect
+from .context import display_subscribe_form
 from django.contrib import messages
 from .models import Newsletter
 from .forms import SubscribeForm
