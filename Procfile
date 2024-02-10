@@ -1,0 +1,1 @@
+web: gunicorn ride_on.wsgi:application
