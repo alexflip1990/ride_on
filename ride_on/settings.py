@@ -32,7 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
                  '8001-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
-                 'ride-on.herokuapp.com', 'localhost']
+                 'ride-on-d3b706f78453.herokuapp.com', 'localhost']
 
 
 # Application definition
