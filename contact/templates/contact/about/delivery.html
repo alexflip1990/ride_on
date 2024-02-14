@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}Delivery Policy{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+    <div class="row">
+        <div class="col">
+            <h1 class="mb-4">Delivery Policy</h1>
+            <h2>Delivery Prices</h2>
+            <p>We offer free delivery on all orders over £250.</p>
+
+            <h2>Delivery Times</h2>
+            <p>Orders are typically processed and dispatched within 1-2 business days. Delivery times may vary depending
+                on your location:</p>
+            <ul>
+                <li>Mainland UK: 2-3 business days</li>
+                <li>Remote Areas: 3-5 business days</li>
+            </ul>
+
+            <h2>Checking Order Status</h2>
+            <p>Once your order has been dispatched, you will receive a confirmation email with tracking information. You
+                can use this information to track the status of your order on our website, if you do not receive a confirmation
+                email please <a class="text-muted" href="{% url 'contact' %}">contact us</a>with your details </p>
+
+            <h2>Refunds and Returns</h2>
+            <p>If you are not completely satisfied with your purchase, you may return it within 30 days for a full
+                refund or exchange. Please ensure the item is unused and in its original packaging. For more
+                information, please refer to our <a class="text-muted" href="{% url 'contact' %}">Contact Form</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
