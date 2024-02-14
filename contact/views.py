@@ -5,6 +5,24 @@ from profiles.models import UserProfile
 from django.contrib import messages
 
 
+def delivery(request):
+    """ A view to return the delivery page"""
+
+    return render(request, 'contact/about/delivery.html')
+
+
+def privacy(request):
+    """ A view to return the privacy page"""
+
+    return render(request, 'contact/about/privacy.html')
+
+
+def t_and_c(request):
+    """ A view to return the t and c page"""
+
+    return render(request, 'contact/about/t_and_c.html')
+
+
 def contact(request):
 
     if request.method == 'POST':
