@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Disallow: /profiles/
+Disallow: /checkout/
+Disallow: /admin/
+Sitemap: https://ride-on-d3b706f78453.herokuapp.com/sitemap.xml
