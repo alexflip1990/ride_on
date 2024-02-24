@@ -32,7 +32,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
                  '8001-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
-                 'ride-on-d3b706f78453.herokuapp.com', 'localhost']
+                 'ride-on-d3b706f78453.herokuapp.com',
+                 '8000-alexflip1990-rideon-aoku1hps0hc.ws-eu108.gitpod.io', 'localhost']
 
 
 # Application definition
