@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 from .forms import AnnouncementForm
 
 from .models import AnnouncementPost
@@ -24,6 +25,7 @@ def announcement_detail(request, pk):
 
 
 @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def announcement_create(request):
     """ Add an announcement to the page """
 
