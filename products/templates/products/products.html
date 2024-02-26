@@ -72,6 +72,12 @@
                                             </a>
                                         </p>
                                         {% endif %}
+                                        <!-- Product Size -->
+                                        <div class="col">
+                                            {% if product.size %}
+                                                <small class="text-muted">Size: {{ product.size }}</small>
+                                            {% endif %}
+                                        </div>
                                         <!-- Product Year -->
                                         {% if product.year %}
                                             <small class="text-muted"><i class="fa-solid fa-calendar-days"></i>{{ product.year }}</small>
