@@ -25,7 +25,7 @@ def announcement_detail(request, pk):
 
 
 @login_required
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/')
 def announcement_create(request):
     """ Add an announcement to the page """
 
