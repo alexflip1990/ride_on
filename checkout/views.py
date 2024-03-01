@@ -3,6 +3,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
+from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -128,6 +129,7 @@ def checkout(request):
     return render(request, template, context)
 
 
+@login_required
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
@@ -135,10 +137,6 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
-    # Check if the logged-in user matches the user associated with the order
-    if order.user_profile.user != request.user:
-        messages.error(request, "Sorry you are not authorized to view this order.")
-        return redirect(reverse('home'))
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
