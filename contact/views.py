@@ -36,7 +36,6 @@ def contact(request):
             Please ensure all fields are valid.')
             return redirect('contact')
 
-
     else:
         if request.user.is_authenticated:
             try:

@@ -24,6 +24,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
