@@ -24,7 +24,7 @@
                 <hr>
             </div>
         </div>
-
+        <!-- Checkout form section -->
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -36,6 +36,7 @@
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
                     </div>
                 </div>
+                <!-- Loop through basket items -->
                 {% for item in basket_items %}
                     <div class="row">
                         <div class="col-2 mb-1">
@@ -47,15 +48,18 @@
                                 {% endif %}
                             </a>
                         </div>
+                        <!-- Product info -->
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
+                        <!-- Subtotal -->
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
+                <!-- Order total -->
                 <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
@@ -70,15 +74,18 @@
                     </div>
                 </div>
             </div>
+            <!-- Checkout form -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
+                    <!-- Personal details -->
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
+                    <!-- Delivery address -->
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
@@ -88,6 +95,7 @@
                         {{ order_form.county | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
+                        <!-- Save delivery info -->
                         <div class="form-check form-check-inline float-right mr-0">
                             {% if user.is_authenticated %}
                                 <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -109,20 +117,23 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
-
+                    <!-- Submit button -->
                     <div class="submit-button text-right mt-5 mb-2">
+                        <!-- Adjust basket button -->
                         <a href="{% url 'view_basket' %}" class="btn btn-outline-black rounded-0">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="font-weight-bold">Adjust Basket</span>
                         </a>
+                        <!-- Complete order button -->
                         <button id="submit-button" class="btn btn-black rounded-0">
                             <span class="font-weight-bold">Complete Order</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>
                         </button>
+                        <!-- Total amount notification -->
                         <p class="small text-danger my-0">
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
