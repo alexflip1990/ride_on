@@ -16,7 +16,8 @@ def new_subscriber(request):
 
             if Newsletter.objects.filter(email=email).exists():
                 messages.error(
-                    request, f"{email} already exists. Please enter email again.")
+                    request, f"{email} already exists. \
+                        Please enter email again.")
             else:
                 form.save()
                 messages.success(

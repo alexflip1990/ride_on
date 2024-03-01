@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 if os.path.exists("env.py"):
-  import env 
+    import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +33,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = ['8000-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
                  '8001-alexflip1990-ride-on-8s2p9lpuze.us2.codeanyapp.com',
                  'ride-on-d3b706f78453.herokuapp.com',
-                 '8000-alexflip1990-rideon-aoku1hps0hc.ws-eu108.gitpod.io', 'localhost']
+                 '8000-alexflip1990-rideon-aoku1hps0hc.ws-eu108.gitpod.io',
+                 'localhost']
 
 
 # Application definition
@@ -147,16 +148,20 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
@@ -190,7 +195,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'ride-on'
     AWS_S3_REGION_NAME = 'eu-west-1'
@@ -209,7 +214,7 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
-#Stripe
+# Stripe
 FREE_DELIVERY_THRESHOLD = 250
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
