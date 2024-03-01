@@ -37,7 +37,7 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     # if statement to allow only the the authorized logged in user to access their order history
-    if order.user != request.user:
+    if order.user_profile.user != request.user:
         return HttpResponse("Sorry you are not authorized to access this order.", status=403)
 
     messages.info(request, (
