@@ -6,10 +6,19 @@ from products.models import Product
 
 def basket_contents(request):
 
+    """
+    Retrieves basket contents from session data and prepares them for display.
+    """
+
     basket_items = []
     total = 0
     product_count = 0
     basket = request.session.get('basket', {})
+
+    """
+    Iterates over items in the basket, calculates total price
+    and counts products.
+    """
 
     for item_id, quantity in basket.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -20,6 +29,11 @@ def basket_contents(request):
             'quantity': quantity,
             'product': product,
         })
+
+    """
+    Calculates delivery cost, free delivery threshold, and grand total
+    based on the total price.
+    """
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

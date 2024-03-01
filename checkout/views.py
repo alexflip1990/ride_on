@@ -16,6 +16,11 @@ from basket.contexts import basket_contents
 import stripe
 import json
 
+"""
+A view that handles caching checkout data,
+including basket content and payment intent metadata.
+"""
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -34,11 +39,19 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+"""
+A view that handles the checkout process, including form validation,
+order creation, and payment processing.
+"""
+
+
 def checkout(request):
+    # Retrieves Stripe keys from settings
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
+        # Retrieves basket content from session and validates order form
         basket = request.session.get('basket', {})
 
         form_data = {
@@ -54,6 +67,8 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
+            # Creates order and order line items, saves them,
+            # and redirects to success page
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
@@ -69,21 +84,25 @@ def checkout(request):
                         )
                     order_line_item.save()
                 except Product.DoesNotExist:
+                    # Handles product not found error and
+                    # redirects to basket view
                     messages.error(request, (
                         "One of the products in your basket wasn't found \
                         in our database. Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
-
+            # Saves user info preference and redirects to success page
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                  reverse('checkout_success', args=[order.order_number]))
         else:
+            # Handles form validation errors and displays error message
             messages.error(request, 'There was an error with your form. \
                 You have submitted, please check your info again.')
 
     else:
+        # Retrieves basket content and initializes order form
         basket = request.session.get('basket', {})
         if not basket:
             messages.error(request, "There are no items in your basket \
@@ -100,6 +119,8 @@ def checkout(request):
         )
 
         if request.user.is_authenticated:
+            # Initializes order form with user profile data
+            # if user is authenticated
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={

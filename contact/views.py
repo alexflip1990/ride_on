@@ -24,8 +24,14 @@ def t_and_c(request):
 
 
 def contact(request):
+    """
+    Handles the contact form submission, saving messages,
+    and rendering contact page.
+    """
 
     if request.method == 'POST':
+        # Handles POST request, validates contact form, saves message,
+        # and redirects to success page or redisplays form
         contact_form = CustomerContactForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
@@ -37,6 +43,7 @@ def contact(request):
             return redirect('contact')
 
     else:
+        # Renders contact form with initial data if user is authenticated
         if request.user.is_authenticated:
             try:
                 user = UserProfile.objects.get(user=request.user)
@@ -48,6 +55,7 @@ def contact(request):
             except UserProfile.DoesNotExist:
                 contact_form = CustomerContactForm()
         else:
+            # Renders empty contact form
             contact_form = CustomerContactForm()
 
     template = 'contact/contact.html'

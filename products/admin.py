@@ -1,10 +1,15 @@
 from django.contrib import admin
 from .models import Product, Category, SubCategory
 
-# Register your models here.
+
+"""
+Customizes the display and ordering of products in
+Django admin.
+"""
 
 
 class ProductAdmin(admin.ModelAdmin):
+    # Specifies fields to display in the product list view
     list_display = (
         'category',
         'name',
