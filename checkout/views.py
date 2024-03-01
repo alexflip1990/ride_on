@@ -135,6 +135,11 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
+    # Check if the logged-in user matches the user associated with the order
+    if order.user_profile.user != request.user:
+        messages.error(request, "Sorry you are not authorized to view this order.")
+        return redirect(reverse('home'))
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
