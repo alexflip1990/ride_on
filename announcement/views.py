@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from .helpers import is_superuser
 from .forms import AnnouncementForm
 
 from .models import AnnouncementPost
@@ -10,18 +11,22 @@ from .models import AnnouncementPost
 
 @login_required
 def announcement_list(request):
-    """ A view to ensure only authenticated users can access the list of announcements"""
+    """ A view to ensure only authenticated users can access
+    the list of announcements"""
 
     announcements = AnnouncementPost.objects.all()
-    return render(request, 'announcement/announcement_list.html', {'announcements': announcements})
+    return render(request, 'announcement/announcement_list.html',
+                  {'announcements': announcements})
 
 
 @login_required
 def announcement_detail(request, pk):
-    """ A view to ensure only authenticated users can access the details of announcements"""
+    """ A view to ensure only authenticated users can access
+    the details of announcements"""
 
     announcement = get_object_or_404(AnnouncementPost, pk=pk)
-    return render(request, 'announcement/announcement_detail.html', {'announcement': announcement})
+    return render(request, 'announcement/announcement_detail.html',
+                  {'announcement': announcement})
 
 
 @login_required
@@ -36,7 +41,8 @@ def announcement_create(request):
             announcement.author = request.user
             announcement.save()
             messages.success(request, 'Announcement has been added!')
-            return redirect(reverse('announcement_detail', args=[announcement.pk]))
+            return redirect(reverse('announcement_detail',
+                                    args=[announcement.pk]))
     else:
         form = AnnouncementForm()
 
@@ -61,7 +67,8 @@ def announcement_edit(request, pk):
             announcement = form.save(commit=False)
             announcement.save()
             messages.success(request, 'Announcement has been edited!')
-            return redirect(reverse('announcement_detail', args=[announcement.pk]))
+            return redirect(reverse('announcement_detail',
+                                    args=[announcement.pk]))
     else:
         form = AnnouncementForm(instance=announcement)
 
@@ -83,4 +90,5 @@ def announcement_delete(request, pk):
         return HttpResponseRedirect(reverse('announcement_list'))
     else:
         # Handle GET request, render the delete confirmation page
-        return render(request, 'announcement/announcement_delete.html', {'announcement': announcement})
+        return render(request, 'announcement/announcement_delete.html',
+                      {'announcement': announcement})
