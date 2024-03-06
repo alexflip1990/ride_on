@@ -938,7 +938,7 @@ Each page has been tested and scores will vary on each device.
 ## Bugs
 - Solved bugs
 ![screen shot of homepage errors](media/homepage-errors.png)
-  - This error was resolved by placeing li elements within an ul element.
+- This error was resolved by placeing li elements within an ul element.
 
 
 
@@ -948,23 +948,28 @@ Each page has been tested and scores will vary on each device.
 
 
 ![screen shot of privacy page errors](media/privacy-errors.png)
-
+  - This error was resolved by placing the li elements within a ol element.
 
 
 
 ![screen shot of terms and conditions errors](media/t-and-c-errors.png)
+- These errors were resolved by removing the closing p element and placing the li elements within ol elements.
 
 
 
 ![screen shot of product erros](media/product-errors.png)
+- These warnings were resolved by removing the type attributes.
 
 
 
 ![screen shot of add product errors](media/add-product-errors.png)
+ - The p element error was resolved by replacing the strong element.
+ - The type attribute was resolved by removing the type.
 
 
 
 ![screen shot of basket errors](media/basket-errors.png)
+- All warnings were resolved by removing the type attribute.
 
 ## Unfixed bugs
 - This is a duplicate attribute error located within {%%} tags on the add products page, due to time constraints I have not been able to resolve this issue yet but will look to fix this issue in the future, it does not effect the overall performance of the site.
