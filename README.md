@@ -4,7 +4,7 @@
 
 
 
-RESPONSIVE IMAGE GOES HERE
+![Screen shot of Am I Responsive](media/am-i-responsive.png)
 
  ## Introduction
    
@@ -80,14 +80,35 @@ Epic 5 **Product Admin**
 
 ## Wireframes
 The wireframes where created using balsamiq
+### Homepage
+![screen shot of homepage wireframe](media/homepage-wireframe.png) ![screen shot of homepage mobile wireframe](media/homepage-mob-wireframe.png)
 
-WIREFRAME IMAGES GO HERE
+
+### Profile Page
+
+![screen shot of profile page wireframe]() ![screen shot of profile mobile wireframe](media/profile-mob-wireframe.png)
+
+### Signup/Login/Out Page
+
+![screen shot of signup/login/out wireframe](media/signup-login-out-wireframe.png)
+
+### Basket Page
+![screen shot of basket wireframe](media/basket-wireframe.png) ![screen shot of basket mobile wireframe](media/basket-mob-wireframe.png)
+
+### Checkout Page
+![screen shot of checkout wireframe]() ![screen shot of checkout mobile wireframe](media/checkout-mob-wireframe.png)
+
+### Products Page
+![screen shot of products wireframe](media/products-wireframe.png) ![screen shot of products mobile wireframe](media/product-mob-wireframe.png)
+
+### Announcements Page
+![screen shout of announcement  wireframe](media/announcement-wireframe.png) ![screen shot of announcement mobile wireframe](media/announcement-mob-wireframe.png)
 
 ##  Model Structure
 The model databases where designed using lucid chart.
 
 
-LUCID CHART IMAGE GOES HERE
+![screenshot of lucid chart](media/lucid-chart.png)
 
 ## Marketing
 ### E-commerce Business Model
@@ -96,7 +117,7 @@ Ride-On is a B2C (business to customer) model, selling a variety of bicycles dir
 ### Facebook marketing 
 This site is connected to Facebook where a business page was created. The Facebook link on the site is not guaranteed to work when the project is reviewed, this is because Facebook has a tendency to remove business pages it deems not to be real, however below is a image of the Facebook page created as proof this task was carried out. 
 
-FACEBOOK IMAGE GOES HERE
+![screen shot of facebook page](media/facebook-page.png)
 
 Additional marketing strategies for Ride-On will involve sending newsletters to new subscribers immediately upon joining, offering competitive prices to incentivize purchases, hosting cycling events, and continuously upgrading and maintaining excellence to remain competitive as the business expands.
 
@@ -121,24 +142,24 @@ This project was brought to life using Agile Methodology in Github, the user sto
 
 5 epics where created which resulted in a total of 29 user stories. Each story was marked with a classification of Must-Have, Should-Have or Could-Have, and each story was also given a story-point. These points inform roughly how much time/difficulty it takes to complete each story.
 
-USER STORY ONE IMAGE HERE
-USER STORY TWO IMAGE HERE
+![screen shot of user stories](media/user-stories-1.png)
+![screen shot of user stories](media/user-stories-2.png)
 
 ## Features
 ### Homepage 
 Ride-On's homepage displays a logo, message, navbar, background image, shop now button and footer. Within the navbar there is a search bar, account icon, basket icon and a product category section. The homepage is fully responsive and displays a hamburger menu toggle for the product categories on smaller screens.
 
-HOME PAGE IMAGE GOES HERE
+![screen shot of homepage](media/home-page.png)
 
 ### Footer 
 The footer is split into five sections,  the first section contains a newsletter form allowing the user to subscribe to the website using their email address. The second section contains links to the privacy policy, terms and conditions and delivery policy, clicking each link will redirect the user to that specific page. The third section contains a contact form and social media links, clicking the facebook link will redirect the user to the websites facebook page. The fourth section contains information about Ride-On's address, email and telephone number. The final section is a disclaimer informing users that this site is for educational purposes and any orders made will not be fulfilled. The footer also displays across all pages of the website.
 
- FOOTER IMAGE GOES HERE
+![screen shot of footer](media/home-page-footer.png)
 
 ### Products Page
 The products page displays all the product images (a default image will be displayed if there is no image available) along with the product description, price, category, size and year. If the user is logged in as admin then next to the year of the product will be an edit link and delete link allowing the admin user to make changes to the product or remove it. Towards the top left of the page by the first product image you will be able to see the total number of products, this will vary depending if you are on the all products page or searched for a particular product or have selected one of the subcategories within that category. Towards the top right of the page is a sort by selector box, this allows the user to sort the products by price (low to high) and vice versa and the same for year, name and category. Located at the bottom right of the screen is a back to top button which will bring the user back to the top of the page when clicked.
 
-PRODUCTS PAGE GOES HERE
+![screen shot of products page](media/products-page.png)
 
 ### Products Detail Page
 The products detail page will display a larger image of the product selected towards the left of the screen which if clicked on will open the image of the product in a separate tab. Located to the right of the image will be all the information about the product including the name, price, category, year and description.
@@ -151,7 +172,7 @@ If the user is logged in as admin the edit and delete links for the product will
 
 Upon smaller screens the image will be displayed above the information then followed by the quantity selector and keep shopping and add to basket button.
 
-PRODUCT DETAIL IMAGE GOES HERE
+![screen shot of product details](media/admin-product-detail.png)
 
 ### Product Admin page
 **ADD A PRODUCT**
@@ -159,14 +180,14 @@ Logged in as admin the user will have the ability to add a product to the databa
 
 Should a regular user try to visit the add products page there is code in place which will display an error toast informing them only store owners can do that.
 
-ADD PRODUCT IMAGE GOES HERE
+![screen shot of add product](media/admin-add-product.png)
 
 ### Edit Product
 Logged in as admin, the user will have the ability to edit a product by clicking the edit link on the products page or on the products detail page. Clicking this link will redirect the admin user to the edit products page which displays a pre-populated form of the products details. There are three buttons to the right of the form, select image will allow the admin user to choose and image, cancel which will redirect the admin user back to the products page and update product. When a product has been updated the admin user will be directed to the product detail page for that product with a success toast informing them the update has been successful.
 
 Should a regular user try to visit the add products page there is code in place which will display an error toast informing them only store owners can do that.
 
-EDIT PRODUCT IMAGE GOES HERE
+![screen shot of edit product](media/admin-edit-product.png)
 
 ### Delete Product
 Should a admin user delete a product using the delete link on the products page or products detail page then that specific product will be removed from the database and the admin user will then be redirected back to the products page
@@ -176,6 +197,8 @@ Should a regular user try to visit the delete products url there is code in plac
 ### Announcements page
 As a registered user they can access the announcements page by clicking the profile icon and selecting the announcement link from the drop down menu. Upon this page will be a list of announcements displayed which will inform users of any events Ride-On will be holding, underneath the announcement list is a back to home page button which will redirect the user back to the homepage.
 
+![screenshot of announcement page](media/user-announcement-page.png)
+
 ### Announcement Admin Page
 **ADD NEW/EDIT ANNOUNCEMENT**
 Logged in as admin, the user has the ability to create new announcements for registered users to see, this can be achieved by clicking the profile icon and selecting the announcement management link from the drop down menu. This will display the announcements list page but will have additional buttons visible, one to add a new announcement, one to edit and one to delete. Adding a new announcement will take the admin user to the create announcement page where they are provided a form to complete and a button to save the announcement. Once saved the admin user will be shown a preview of the announcement with a success toast saying the announcement has been created and two buttons one to edit the newly created announcement which will redirect the admin user to the edit announcement form which is pre-populated with that current announcements details and one view the announcements list which will redirect back to the announcements list page.
@@ -184,8 +207,8 @@ There is code in place to ensure registered users cannot access the add announce
 
 If a registered user tries to access the edit announcement page via url it will display the announcement however they will not be able edit/delete as there is code in place that only allows these buttons to be visible to admin users.
 
-ADD ANNOUNCMENT IMAGE HERE
-EDIT ANNOUNCEMENT IMAGE HERE
+![screen shot of admin announcement page](media/admin-announcement.png)
+
 
 ### Delete Announcement
 Logged in as admin, to delete an announcement proceed to the announcements list via the announcement management link within the profile icon drop down menu, under each announcement will be a delete button, once selected a pop up message will ask if the user is sure they want to delete the announcement and when ok is selected the announcement is deleted from the list with a success toast informing the announcement has been deleted.
@@ -197,7 +220,7 @@ Upon the basket page the user will see a list of all the products they have adde
 
 Located at the bottom right of the page is the users basket total, a delivery fee if the free delivery threshold has not been met, a message informing the user how much more they need to spend to reach the free delivery threshold, the grand total and two buttons. Keep shopping will redirect the user back to the products page and secure checkout will redirect to the checkout page.
 
-SHOPPING BASKET IMAGE GOES HERE
+![screen shot of basket page](media/basket-page.png)
 
 ### Checkout Page
 Upon the checkout page the user is displayed a form on the left side of the screen which has different fields for name, email, delivery information, phone number a dropdown to select a country and card details. If the user is registered and has updated their details via the profile page when they reach the checkout page the form will be pre-populated with there information, if they have not updated their details on the profile page, there is a checkbox towards the bottom of the form to save the details to there profile so the next order they make this form will be pre-populated with the details. If the user is not registered the form will appear empty and instead of the checkbox they will have links to either create an account or log in. They are not required to do this as they can purchase an item without an account however they will not be able to view their previous orders on the site.
@@ -210,65 +233,71 @@ When the user clicks complete order, a checkout payment overlay will be displaye
 
 If an error occurs, the user will be redirected back to the checkout page with an error toast saying there is a issue with their information and to try again.
 
-CHECKOUT IMAGE GOES HERE
+![screen shot of checkout page](media/checkout-page.png)
 
 ### Checkout Success
 Upon a successful checkout the user will be redirected to the checkout success page, this will display a thank you message and a summary of the order and informs the user that an email confirmation has been sent to the email address they have provided.
 
 There is also a continue shopping button located under the summary and a success toast confirming to the user that the order was successful and provides their order number and informs them an email has been sent to their email address.
 
-CHECKOUT SUCCESS IMAGE GOES HERE
+![screen shot of checkout success page](media/checkout-success.png)
 
 ### Order Confirmation Email
 
-ORDER CONFIRMATION EMAIL GOES HERE
+![screen shot of order confirmation email](media/order-confirmation-email.png)
 
 ### Profile Page
 The profile page can be accessed by registered users by selecting the profile icon and clicking the my profile link from the dropdown menu. The Profile page will display the users default information they have previously entered such as name, address, country ( with dropdown option ) and phone number, below their information is an update info button which when clicked will update any changes they have made to their details with a success toast confirming the details are updated.
 
 To the right of the default information the users order history will be displayed, each order providing the order number, date, items and order total. The order number is a link the user can click which will display the order details for thats specific order.
 
-PROFILE PAGE IMAGE GOES HERE
+![screen shot of profile page](media/profile-page.png)
 
 ### Contact Page
 The contact page provides a form for registered and non-registered users so they are able to contact the store via the website, there are five fields in total for subject, name, email, message and phone number. Some fields are required for the form to be submitted and the user will be prompted to fill in these fields if they try to send the form without these fields completed. If the user is logged into their profile the name, email and phone number field will be pre-populated from their profile detail information.
 
 Below the form is a back to shop button which redirects the user to the products page and a send button. Once the form has been sent the user will be redirected  to the contact success page with a tank you message informing them a member of the team will be in touch. A success toast will also be displayed to inform the user their enquiry has been sent successfully.
 
-CONTACT IMAGE GOES HERE
+![screen shot of contact page](media/contact-page.png)
 
 ### Sign Up Page
 The sign up page displays a form allowing the user to create an account, they will need to provide their email address a user name and a password.
 
-SIGN UP IMAGE GOES HERE
+![screen shot of sign up page](media/sign-up.png)
 
 Once the user has created an account they will be sent an email with a link to verify their email email address
 
-EMAIL VERIFICATION GOES HERE
+![screen shot of email verification](media/confirm-email.png)
 
 ### Sign In Page
 The sign in page displays two fields for the user, they are required to enter their email address or username and their password, there is a checkbox to remember their details and if selected will make logging in a faster experience next time they visit the site.
 
-SIGN IN IMAGE GOES HERE
+![screen shot of sign in page](media/sign-in.png)
 
 ###  Sign Out Page
 The sign out page will display a message asking if the user is sure they want to sign out, clicking cancel will redirect the user back to the homepage and clicking sign out will redirect the user back to the home page with a success toast informing the user they are now signed out.
 
-SIGN OUT IMAGE GOES HERE
+![screen shot of sign out page](media/sign-out.png)
 
 ### Privacy Policy
 The privacy policy page features a document tailored for an e-commerce platform designed on Rocket Lawyer. However, since Ride-On is an educational project and not an operational store, the privacy policy is provided for learning purposes only and is not legally binding.
 
+![screen shot of privacy policy](media/privacy-page.png)
+
 ### Terms And Conditions
 The terms and conditions page showcases a document created for an e-commerce platform using Rocket Lawyer. Since Ride-On is for educational purposes only and not an actual store, the terms and conditions provided are not legally binding.
+
+![screen shot of terms and conditions](media/t-and-c.png)
 
 ### Delivery Policy
 The delivery policy outlines the details regarding delivery procedures for the store created using Rocket Lawyer, again as this store is for educational purposes only the delivery policy is not legally binding.
 
+![screen shot of delivery policy](media/delivery-policy.png)
+
 ### 404 Error 
 The 404 error page will be displayed if a user tries to enter a url that does not exist within the site, a message will be displayed informing the user that this page does not exist and there is a go back button which will redirect the user back to the homepage.
 
-404 ERROR PAGE GOES HERE
+![screen shot of 404 error page](media/404-error-page.png)
 
 ## Features left to add
 
@@ -780,9 +809,9 @@ CHECKOUT JAVA VALIDATOR
 - ride-on/views.py
 
 ##  LIGHTHOUSE PERFORMANCE
-HOMEPAGE IMAGE GOES HERE 
-PRODUCTS PAGE GOES HERE
-PRODUCTS DETAIL GOES HERE
+![screenshot of home page lighthouse](media/lighthouse-homepage.png) 
+![screen shot of products lighthouse](media/products-lighthouse.png)
+![screen shot of products detail lighthouse](media/product-detail-lighthouse.png)
 
 Each page has been tested and scores will vary on each device.
 
@@ -908,17 +937,36 @@ Each page has been tested and scores will vary on each device.
 
 ## Bugs
 - Solved bugs
-- HOMEPAGE ERRORS GOES HERE
-PROFILE ERRORS GOES HERE
-PRIVACY ERRORS GOES HERE
-T & C ERRORS GOES HERE
-PRODUCT ERRORS GOES HERE
-ADD PRODUCT ERRORS GOES HERE
-BASKET ERRORS GOES HERE
+![screen shot of homepage errors](media/homepage-errors.png)
+
+
+
+![screen shot of profile page errors](media/profile-errors.png)
+
+
+
+![screen shot of privacy page errors](media/privacy-errors.png)
+
+
+
+![screen shot of terms and conditions errors](media/t-and-c-errors.png)
+
+
+
+![screen shot of product erros](media/product-errors.png)
+
+
+
+![screen shot of add product errors](media/add-product-errors.png)
+
+
+
+![screen shot of basket errors](media/basket-errors.png)
 
 ## Unfixed bugs
 - This is a duplicate attribute error located within {%%} tags on the add products page, due to time constraints I have not been able to resolve this issue yet but will look to fix this issue in the future, it does not effect the overall performance of the site.
-  ADD PRODUCT ERROR 2 GOES HERE
+
+  ![screen shot of add product errors](media/add-product-error-2.png)
 
 - I had to add the quantity_input_script.html code into the postload js block for incrementing/decrementing the products amount as for some reason it was not recognising the file path, I was advised by John from tutor support to do this as a workaround as he reviewed the code and could not see why it wasn't working. I had created the necessary files to put the code in and used the correct file path but it would not work. This may have been a bug with codeanywhere which was the original platform I used before switching to gitpod towards the end of my project due to consistent issues with codeanywhere. Having the code in the postload js block allows it to work correctly however this may affect the performance of the site with lighthouse.
 
