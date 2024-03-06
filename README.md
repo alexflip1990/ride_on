@@ -86,7 +86,7 @@ The wireframes where created using balsamiq
 
 ### Profile Page
 
-![screen shot of profile page wireframe]() ![screen shot of profile mobile wireframe](media/profile-mob-wireframe.png)
+![screen shot of profile page wireframe](media/profile-wireframe.png) ![screen shot of profile mobile wireframe](media/profile-mob-wireframe.png)
 
 ### Signup/Login/Out Page
 
@@ -96,7 +96,7 @@ The wireframes where created using balsamiq
 ![screen shot of basket wireframe](media/basket-wireframe.png) ![screen shot of basket mobile wireframe](media/basket-mob-wireframe.png)
 
 ### Checkout Page
-![screen shot of checkout wireframe]() ![screen shot of checkout mobile wireframe](media/checkout-mob-wireframe.png)
+![screen shot of checkout wireframe](media/basket-checkout-wireframe.png) ![screen shot of checkout mobile wireframe](media/checkout-mob-wireframe.png)
 
 ### Products Page
 ![screen shot of products wireframe](media/products-wireframe.png) ![screen shot of products mobile wireframe](media/product-mob-wireframe.png)
@@ -938,14 +938,17 @@ Each page has been tested and scores will vary on each device.
 ## Bugs
 - Solved bugs
 ![screen shot of homepage errors](media/homepage-errors.png)
+  - This error was resolved by placeing li elements within an ul element.
 
 
 
 ![screen shot of profile page errors](media/profile-errors.png)
+  - The warning was resolved by removing the type attribute from the script and the error was resolved by adding a > to the necessary div element.
 
 
 
 ![screen shot of privacy page errors](media/privacy-errors.png)
+
 
 
 
